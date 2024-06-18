@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_lists_ingredients",
+  "info": {
+    "displayName": "ingredients",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "value": {
+      "type": "string"
+    }
+  }
+}
