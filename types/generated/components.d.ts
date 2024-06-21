@@ -3,7 +3,7 @@ import type { Schema, Attribute } from '@strapi/strapi';
 export interface ListsIngredients extends Schema.Component {
   collectionName: 'components_lists_ingredients';
   info: {
-    displayName: 'ingredients';
+    displayName: 'text-values';
     icon: 'bulletList';
     description: '';
   };
