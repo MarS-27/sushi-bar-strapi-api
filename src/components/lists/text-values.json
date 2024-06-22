@@ -1,14 +1,14 @@
 {
-  "collectionName": "components_lists_ingredients",
+  "collectionName": "components_lists_text_values",
   "info": {
     "displayName": "text-values",
-    "icon": "bulletList",
     "description": ""
   },
   "options": {},
   "attributes": {
     "value": {
-      "type": "string"
+      "type": "string",
+      "required": false
     }
   }
 }
