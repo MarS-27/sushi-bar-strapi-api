@@ -1074,6 +1074,58 @@ export interface ApiDeliveryPaymentDeliveryPayment
   };
 }
 
+export interface ApiOrderOrder extends Schema.CollectionType {
+  collectionName: 'orders';
+  info: {
+    singularName: 'order';
+    pluralName: 'orders';
+    displayName: 'order';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    people_number: Attribute.Integer &
+      Attribute.SetMinMax<
+        {
+          min: 1;
+        },
+        number
+      > &
+      Attribute.DefaultTo<1>;
+    customer_name: Attribute.String & Attribute.Required;
+    customer_phone: Attribute.String & Attribute.Required;
+    delivery_type: Attribute.Enumeration<['SelfPickup', 'ToAddress']> &
+      Attribute.Required &
+      Attribute.DefaultTo<'SelfPickup'>;
+    ordered_products: Attribute.Component<'lists.ordered-product', true> &
+      Attribute.Required;
+    delivery_address: Attribute.Component<'objects.delivery-address'> &
+      Attribute.Required;
+    payment_method: Attribute.Enumeration<['Card', 'Cash']> &
+      Attribute.Required &
+      Attribute.DefaultTo<'Card'>;
+    total_weight: Attribute.Integer & Attribute.Required;
+    total_price: Attribute.Integer & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::order.order',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::order.order',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiProductProduct extends Schema.CollectionType {
   collectionName: 'products';
   info: {
@@ -1164,11 +1216,11 @@ export interface ApiProductProduct extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    weight: Attribute.String &
+    weight: Attribute.Integer &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     createdAt: Attribute.DateTime;
@@ -1283,6 +1335,7 @@ declare module '@strapi/types' {
       'api::category.category': ApiCategoryCategory;
       'api::contact.contact': ApiContactContact;
       'api::delivery-payment.delivery-payment': ApiDeliveryPaymentDeliveryPayment;
+      'api::order.order': ApiOrderOrder;
       'api::product.product': ApiProductProduct;
       'api::promotion.promotion': ApiPromotionPromotion;
     }
