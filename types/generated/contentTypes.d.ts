@@ -794,6 +794,7 @@ export interface ApiAboutAbout extends Schema.CollectionType {
     singularName: 'about';
     pluralName: 'abouts';
     displayName: 'about';
+    description: '';
   };
   options: {
     draftAndPublish: true;
