@@ -984,7 +984,7 @@ export interface ApiContactContact extends Schema.CollectionType {
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     createdAt: Attribute.DateTime;
@@ -1029,11 +1029,11 @@ export interface ApiDeliveryPaymentDeliveryPayment
     };
   };
   attributes: {
-    name: Attribute.Enumeration<['Delivery', 'Payment']> &
+    type: Attribute.Enumeration<['Delivery', 'Payment']> &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
-          localized: true;
+          localized: false;
         };
       }>;
     title: Attribute.String &

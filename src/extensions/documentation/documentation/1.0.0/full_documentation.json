@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-06-27T14:52:27.090Z"
+    "x-generation-date": "2024-07-01T10:58:20.897Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -3833,14 +3833,14 @@
       },
       "DeliveryPaymentLocalizationRequest": {
         "required": [
-          "name",
+          "type",
           "title",
           "description",
           "locale"
         ],
         "type": "object",
         "properties": {
-          "name": {
+          "type": {
             "type": "string",
             "enum": [
               "Delivery",
@@ -3866,13 +3866,13 @@
         "properties": {
           "data": {
             "required": [
-              "name",
+              "type",
               "title",
               "description"
             ],
             "type": "object",
             "properties": {
-              "name": {
+              "type": {
                 "type": "string",
                 "enum": [
                   "Delivery",
@@ -4009,12 +4009,12 @@
       "DeliveryPayment": {
         "type": "object",
         "required": [
-          "name",
+          "type",
           "title",
           "description"
         ],
         "properties": {
-          "name": {
+          "type": {
             "type": "string",
             "enum": [
               "Delivery",
