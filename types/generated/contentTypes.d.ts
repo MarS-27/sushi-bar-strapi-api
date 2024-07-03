@@ -860,6 +860,28 @@ export interface ApiBannerBanner extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    relation_route: Attribute.Enumeration<
+      ['products', 'promotions', 'delivery-payments']
+    > &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }>;
+    relation: Attribute.DynamicZone<
+      [
+        'banner-relations.product',
+        'banner-relations.promotion',
+        'banner-relations.delivery'
+      ]
+    > &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1224,6 +1246,13 @@ export interface ApiProductProduct extends Schema.CollectionType {
           localized: false;
         };
       }>;
+    isHot: Attribute.Boolean &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: false;
+        };
+      }> &
+      Attribute.DefaultTo<false>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

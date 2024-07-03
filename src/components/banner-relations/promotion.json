@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_banner_relations_promotions",
+  "info": {
+    "displayName": "promotion"
+  },
+  "options": {},
+  "attributes": {
+    "promotion": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::promotion.promotion"
+    }
+  }
+}

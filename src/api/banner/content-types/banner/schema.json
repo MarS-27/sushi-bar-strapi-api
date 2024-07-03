@@ -29,6 +29,34 @@
           "localized": true
         }
       }
+    },
+    "relation_route": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": false
+        }
+      },
+      "type": "enumeration",
+      "enum": [
+        "products",
+        "promotions",
+        "delivery-payments"
+      ],
+      "required": true
+    },
+    "relation": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "dynamiczone",
+      "components": [
+        "banner-relations.product",
+        "banner-relations.promotion",
+        "banner-relations.delivery"
+      ],
+      "required": true
     }
   }
 }
