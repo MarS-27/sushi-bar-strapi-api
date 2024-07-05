@@ -113,3 +113,10 @@ dist
 build
 .strapi-updater.json
 .strapi-cloud.json
+
+############################
+# Swagger auto-generated files
+############################
+
+src/extensions/documentation/documentation
+src/extensions/documentation/public
