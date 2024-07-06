@@ -965,7 +965,7 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   };
 }
 
-export interface ApiContactContact extends Schema.CollectionType {
+export interface ApiContactContact extends Schema.SingleType {
   collectionName: 'contacts';
   info: {
     singularName: 'contact';

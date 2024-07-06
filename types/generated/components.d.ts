@@ -84,7 +84,7 @@ export interface ListsTextValues extends Schema.Component {
     description: '';
   };
   attributes: {
-    value: Attribute.Text;
+    value: Attribute.Text & Attribute.Required;
   };
 }
 
