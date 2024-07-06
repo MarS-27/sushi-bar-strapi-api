@@ -1,5 +1,5 @@
 {
-  "/abouts": {
+  "/about": {
     "get": {
       "responses": {
         "200": {
@@ -7,7 +7,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/AboutListResponse"
+                "$ref": "#/components/schemas/AboutResponse"
               }
             }
           }
@@ -169,168 +169,7 @@
           }
         }
       ],
-      "operationId": "get/abouts"
-    },
-    "post": {
-      "responses": {
-        "200": {
-          "description": "OK",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AboutResponse"
-              }
-            }
-          }
-        },
-        "400": {
-          "description": "Bad Request",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Error"
-              }
-            }
-          }
-        },
-        "401": {
-          "description": "Unauthorized",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Error"
-              }
-            }
-          }
-        },
-        "403": {
-          "description": "Forbidden",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Error"
-              }
-            }
-          }
-        },
-        "404": {
-          "description": "Not Found",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Error"
-              }
-            }
-          }
-        },
-        "500": {
-          "description": "Internal Server Error",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Error"
-              }
-            }
-          }
-        }
-      },
-      "tags": [
-        "About"
-      ],
-      "parameters": [],
-      "operationId": "post/abouts",
-      "requestBody": {
-        "required": true,
-        "content": {
-          "application/json": {
-            "schema": {
-              "$ref": "#/components/schemas/AboutRequest"
-            }
-          }
-        }
-      }
-    }
-  },
-  "/abouts/{id}": {
-    "get": {
-      "responses": {
-        "200": {
-          "description": "OK",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/AboutResponse"
-              }
-            }
-          }
-        },
-        "400": {
-          "description": "Bad Request",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Error"
-              }
-            }
-          }
-        },
-        "401": {
-          "description": "Unauthorized",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Error"
-              }
-            }
-          }
-        },
-        "403": {
-          "description": "Forbidden",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Error"
-              }
-            }
-          }
-        },
-        "404": {
-          "description": "Not Found",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Error"
-              }
-            }
-          }
-        },
-        "500": {
-          "description": "Internal Server Error",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Error"
-              }
-            }
-          }
-        }
-      },
-      "tags": [
-        "About"
-      ],
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "",
-          "deprecated": false,
-          "required": true,
-          "schema": {
-            "type": "number"
-          }
-        }
-      ],
-      "operationId": "get/abouts/{id}"
+      "operationId": "get/about"
     },
     "put": {
       "responses": {
@@ -398,19 +237,8 @@
       "tags": [
         "About"
       ],
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "",
-          "deprecated": false,
-          "required": true,
-          "schema": {
-            "type": "number"
-          }
-        }
-      ],
-      "operationId": "put/abouts/{id}",
+      "parameters": [],
+      "operationId": "put/about",
       "requestBody": {
         "required": true,
         "content": {
@@ -489,22 +317,11 @@
       "tags": [
         "About"
       ],
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "",
-          "deprecated": false,
-          "required": true,
-          "schema": {
-            "type": "number"
-          }
-        }
-      ],
-      "operationId": "delete/abouts/{id}"
+      "parameters": [],
+      "operationId": "delete/about"
     }
   },
-  "/abouts/{id}/localizations": {
+  "/about/localizations": {
     "post": {
       "responses": {
         "200": {
@@ -571,19 +388,8 @@
       "tags": [
         "About"
       ],
-      "parameters": [
-        {
-          "name": "id",
-          "in": "path",
-          "description": "",
-          "deprecated": false,
-          "required": true,
-          "schema": {
-            "type": "number"
-          }
-        }
-      ],
-      "operationId": "post/abouts/{id}/localizations",
+      "parameters": [],
+      "operationId": "post/about/localizations",
       "requestBody": {
         "required": true,
         "content": {

@@ -788,13 +788,12 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
-export interface ApiAboutAbout extends Schema.CollectionType {
+export interface ApiAboutAbout extends Schema.SingleType {
   collectionName: 'abouts';
   info: {
     singularName: 'about';
     pluralName: 'abouts';
     displayName: 'about';
-    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -805,7 +804,7 @@ export interface ApiAboutAbout extends Schema.CollectionType {
     };
   };
   attributes: {
-    paragraph: Attribute.Component<'lists.text-values', true> &
+    paragraphs: Attribute.Component<'lists.text-values', true> &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {

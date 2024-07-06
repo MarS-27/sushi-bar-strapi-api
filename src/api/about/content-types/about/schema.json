@@ -1,11 +1,10 @@
 {
-  "kind": "collectionType",
+  "kind": "singleType",
   "collectionName": "abouts",
   "info": {
     "singularName": "about",
     "pluralName": "abouts",
-    "displayName": "about",
-    "description": ""
+    "displayName": "about"
   },
   "options": {
     "draftAndPublish": true
@@ -16,7 +15,7 @@
     }
   },
   "attributes": {
-    "paragraph": {
+    "paragraphs": {
       "type": "component",
       "repeatable": true,
       "pluginOptions": {
