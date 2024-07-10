@@ -1,11 +1,10 @@
 {
-  "kind": "collectionType",
+  "kind": "singleType",
   "collectionName": "delivery_payments",
   "info": {
     "singularName": "delivery-payment",
     "pluralName": "delivery-payments",
-    "displayName": "delivery-payment",
-    "description": ""
+    "displayName": "delivery-payment"
   },
   "options": {
     "draftAndPublish": true
@@ -16,35 +15,26 @@
     }
   },
   "attributes": {
-    "type": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
-      "type": "enumeration",
-      "enum": [
-        "Delivery",
-        "Payment"
-      ],
-      "required": true
-    },
-    "title": {
+    "delivery": {
+      "type": "component",
+      "repeatable": true,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "type": "string",
+      "component": "lists.info",
       "required": true
     },
-    "description": {
+    "payment": {
+      "type": "component",
+      "repeatable": true,
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "type": "text",
+      "component": "lists.info",
       "required": true
     }
   }

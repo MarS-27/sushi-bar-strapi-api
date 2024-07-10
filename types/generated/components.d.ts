@@ -5,13 +5,7 @@ export interface BannerRelationsDelivery extends Schema.Component {
   info: {
     displayName: 'delivery';
   };
-  attributes: {
-    delivery_payment: Attribute.Relation<
-      'banner-relations.delivery',
-      'oneToOne',
-      'api::delivery-payment.delivery-payment'
-    >;
-  };
+  attributes: {};
 }
 
 export interface BannerRelationsProduct extends Schema.Component {
@@ -39,6 +33,17 @@ export interface BannerRelationsPromotion extends Schema.Component {
       'oneToOne',
       'api::promotion.promotion'
     >;
+  };
+}
+
+export interface ListsInfo extends Schema.Component {
+  collectionName: 'components_lists_infos';
+  info: {
+    displayName: 'info';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    description: Attribute.Text;
   };
 }
 
@@ -109,6 +114,7 @@ declare module '@strapi/types' {
       'banner-relations.delivery': BannerRelationsDelivery;
       'banner-relations.product': BannerRelationsProduct;
       'banner-relations.promotion': BannerRelationsPromotion;
+      'lists.info': ListsInfo;
       'lists.ordered-product': ListsOrderedProduct;
       'lists.social-media': ListsSocialMedia;
       'lists.text-values': ListsTextValues;

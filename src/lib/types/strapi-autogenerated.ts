@@ -20,13 +20,13 @@ export interface Error {
 }
 
 export interface AboutLocalizationRequest {
-  paragraph: ListsTextValuesComponent[];
+  paragraphs: ListsTextValuesComponent[];
   locale: string;
 }
 
 export interface AboutRequest {
   data: {
-    paragraph: ListsTextValuesComponent[];
+    paragraphs: ListsTextValuesComponent[];
     locale?: string;
   };
 }
@@ -80,7 +80,7 @@ export interface AboutListResponse {
 }
 
 export interface About {
-  paragraph: ListsTextValuesComponent[];
+  paragraphs: ListsTextValuesComponent[];
   /** @format date-time */
   createdAt?: string;
   /** @format date-time */
@@ -822,38 +822,6 @@ export interface BannerRelationsPromotionComponent {
 export interface BannerRelationsDeliveryComponent {
   id?: number;
   __component?: string;
-  delivery_payment?: {
-    data?: {
-      id?: number;
-      attributes?: {
-        type?: BannerRelationsDeliveryComponentTypeEnum;
-        title?: string;
-        description?: string;
-        /** @format date-time */
-        createdAt?: string;
-        /** @format date-time */
-        updatedAt?: string;
-        /** @format date-time */
-        publishedAt?: string;
-        createdBy?: {
-          data?: {
-            id?: number;
-            attributes?: object;
-          };
-        };
-        updatedBy?: {
-          data?: {
-            id?: number;
-            attributes?: object;
-          };
-        };
-        localizations?: {
-          data?: any[];
-        };
-        locale?: string;
-      };
-    };
-  };
 }
 
 export interface CategoryLocalizationRequest {
@@ -1703,17 +1671,15 @@ export interface ListsSocialMediaComponent {
 }
 
 export interface DeliveryPaymentLocalizationRequest {
-  type: DeliveryPaymentLocalizationRequestTypeEnum;
-  title: string;
-  description: string;
+  delivery: ListsInfoComponent[];
+  payment: ListsInfoComponent[];
   locale: string;
 }
 
 export interface DeliveryPaymentRequest {
   data: {
-    type: DeliveryPaymentRequestTypeEnum;
-    title: string;
-    description: string;
+    delivery: ListsInfoComponent[];
+    payment: ListsInfoComponent[];
     locale?: string;
   };
 }
@@ -1767,9 +1733,8 @@ export interface DeliveryPaymentListResponse {
 }
 
 export interface DeliveryPayment {
-  type: DeliveryPaymentTypeEnum;
-  title: string;
-  description: string;
+  delivery: ListsInfoComponent[];
+  payment: ListsInfoComponent[];
   /** @format date-time */
   createdAt?: string;
   /** @format date-time */
@@ -1895,6 +1860,12 @@ export interface DeliveryPaymentResponseDataObject {
 export interface DeliveryPaymentResponse {
   data?: DeliveryPaymentResponseDataObject;
   meta?: object;
+}
+
+export interface ListsInfoComponent {
+  id?: number;
+  title?: string;
+  description?: string;
 }
 
 export interface OrderRequest {
@@ -3297,14 +3268,6 @@ export type BannerRequestRelationRouteEnum = "products" | "promotions" | "delive
 
 export type BannerRelationRouteEnum = "products" | "promotions" | "delivery-payments";
 
-export type BannerRelationsDeliveryComponentTypeEnum = "Delivery" | "Payment";
-
-export type DeliveryPaymentLocalizationRequestTypeEnum = "Delivery" | "Payment";
-
-export type DeliveryPaymentRequestTypeEnum = "Delivery" | "Payment";
-
-export type DeliveryPaymentTypeEnum = "Delivery" | "Payment";
-
 export type OrderRequestDeliveryTypeEnum = "SelfPickup" | "ToAddress";
 
 export type OrderRequestPaymentMethodEnum = "Card" | "Cash";
@@ -3313,7 +3276,7 @@ export type OrderDeliveryTypeEnum = "SelfPickup" | "ToAddress";
 
 export type OrderPaymentMethodEnum = "Card" | "Cash";
 
-export interface GetAboutsParams {
+export interface GetAboutParams {
   /** Sort by attributes ascending (asc) or descending (desc) */
   sort?: string;
   /** Return page/pageSize (default: true) */
@@ -3336,18 +3299,14 @@ export interface GetAboutsParams {
   locale?: string;
 }
 
-export type GetAboutsData = AboutListResponse;
+export type GetAboutData = AboutResponse;
 
-export type PostAboutsData = AboutResponse;
-
-export type GetAboutsIdData = AboutResponse;
-
-export type PutAboutsIdData = AboutResponse;
+export type PutAboutData = AboutResponse;
 
 /** @format int64 */
-export type DeleteAboutsIdData = number;
+export type DeleteAboutData = number;
 
-export type PostAboutsIdLocalizationsData = AboutLocalizationResponse;
+export type PostAboutLocalizationsData = AboutLocalizationResponse;
 
 export interface GetBannersParams {
   /** Sort by attributes ascending (asc) or descending (desc) */
@@ -3421,7 +3380,7 @@ export type DeleteCategoriesIdData = number;
 
 export type PostCategoriesIdLocalizationsData = CategoryLocalizationResponse;
 
-export interface GetContactsParams {
+export interface GetContactParams {
   /** Sort by attributes ascending (asc) or descending (desc) */
   sort?: string;
   /** Return page/pageSize (default: true) */
@@ -3444,20 +3403,16 @@ export interface GetContactsParams {
   locale?: string;
 }
 
-export type GetContactsData = ContactListResponse;
+export type GetContactData = ContactResponse;
 
-export type PostContactsData = ContactResponse;
-
-export type GetContactsIdData = ContactResponse;
-
-export type PutContactsIdData = ContactResponse;
+export type PutContactData = ContactResponse;
 
 /** @format int64 */
-export type DeleteContactsIdData = number;
+export type DeleteContactData = number;
 
-export type PostContactsIdLocalizationsData = ContactLocalizationResponse;
+export type PostContactLocalizationsData = ContactLocalizationResponse;
 
-export interface GetDeliveryPaymentsParams {
+export interface GetDeliveryPaymentParams {
   /** Sort by attributes ascending (asc) or descending (desc) */
   sort?: string;
   /** Return page/pageSize (default: true) */
@@ -3480,18 +3435,14 @@ export interface GetDeliveryPaymentsParams {
   locale?: string;
 }
 
-export type GetDeliveryPaymentsData = DeliveryPaymentListResponse;
+export type GetDeliveryPaymentData = DeliveryPaymentResponse;
 
-export type PostDeliveryPaymentsData = DeliveryPaymentResponse;
-
-export type GetDeliveryPaymentsIdData = DeliveryPaymentResponse;
-
-export type PutDeliveryPaymentsIdData = DeliveryPaymentResponse;
+export type PutDeliveryPaymentData = DeliveryPaymentResponse;
 
 /** @format int64 */
-export type DeleteDeliveryPaymentsIdData = number;
+export type DeleteDeliveryPaymentData = number;
 
-export type PostDeliveryPaymentsIdLocalizationsData = DeliveryPaymentLocalizationResponse;
+export type PostDeliveryPaymentLocalizationsData = DeliveryPaymentLocalizationResponse;
 
 export interface GetOrdersParams {
   /** Sort by attributes ascending (asc) or descending (desc) */
@@ -3760,11 +3711,11 @@ export namespace About {
   /**
    * No description
    * @tags About
-   * @name GetAbouts
-   * @request GET:/abouts
+   * @name GetAbout
+   * @request GET:/about
    * @secure
    */
-  export namespace GetAbouts {
+  export namespace GetAbout {
     export type RequestParams = {};
     export type RequestQuery = {
       /** Sort by attributes ascending (asc) or descending (desc) */
@@ -3790,90 +3741,52 @@ export namespace About {
     };
     export type RequestBody = never;
     export type RequestHeaders = {};
-    export type ResponseBody = GetAboutsData;
+    export type ResponseBody = GetAboutData;
   }
 
   /**
    * No description
    * @tags About
-   * @name PostAbouts
-   * @request POST:/abouts
+   * @name PutAbout
+   * @request PUT:/about
    * @secure
    */
-  export namespace PostAbouts {
+  export namespace PutAbout {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = AboutRequest;
     export type RequestHeaders = {};
-    export type ResponseBody = PostAboutsData;
+    export type ResponseBody = PutAboutData;
   }
 
   /**
    * No description
    * @tags About
-   * @name GetAboutsId
-   * @request GET:/abouts/{id}
+   * @name DeleteAbout
+   * @request DELETE:/about
    * @secure
    */
-  export namespace GetAboutsId {
-    export type RequestParams = {
-      id: number;
-    };
+  export namespace DeleteAbout {
+    export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = never;
     export type RequestHeaders = {};
-    export type ResponseBody = GetAboutsIdData;
+    export type ResponseBody = DeleteAboutData;
   }
 
   /**
    * No description
    * @tags About
-   * @name PutAboutsId
-   * @request PUT:/abouts/{id}
+   * @name PostAboutLocalizations
+   * @request POST:/about/localizations
    * @secure
    */
-  export namespace PutAboutsId {
-    export type RequestParams = {
-      id: number;
-    };
-    export type RequestQuery = {};
-    export type RequestBody = AboutRequest;
-    export type RequestHeaders = {};
-    export type ResponseBody = PutAboutsIdData;
-  }
-
-  /**
-   * No description
-   * @tags About
-   * @name DeleteAboutsId
-   * @request DELETE:/abouts/{id}
-   * @secure
-   */
-  export namespace DeleteAboutsId {
-    export type RequestParams = {
-      id: number;
-    };
-    export type RequestQuery = {};
-    export type RequestBody = never;
-    export type RequestHeaders = {};
-    export type ResponseBody = DeleteAboutsIdData;
-  }
-
-  /**
-   * No description
-   * @tags About
-   * @name PostAboutsIdLocalizations
-   * @request POST:/abouts/{id}/localizations
-   * @secure
-   */
-  export namespace PostAboutsIdLocalizations {
-    export type RequestParams = {
-      id: number;
-    };
+  export namespace PostAboutLocalizations {
+    export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = AboutLocalizationRequest;
     export type RequestHeaders = {};
-    export type ResponseBody = PostAboutsIdLocalizationsData;
+    export type ResponseBody = PostAboutLocalizationsData;
   }
 }
 
@@ -4123,11 +4036,11 @@ export namespace Contact {
   /**
    * No description
    * @tags Contact
-   * @name GetContacts
-   * @request GET:/contacts
+   * @name GetContact
+   * @request GET:/contact
    * @secure
    */
-  export namespace GetContacts {
+  export namespace GetContact {
     export type RequestParams = {};
     export type RequestQuery = {
       /** Sort by attributes ascending (asc) or descending (desc) */
@@ -4153,90 +4066,52 @@ export namespace Contact {
     };
     export type RequestBody = never;
     export type RequestHeaders = {};
-    export type ResponseBody = GetContactsData;
+    export type ResponseBody = GetContactData;
   }
 
   /**
    * No description
    * @tags Contact
-   * @name PostContacts
-   * @request POST:/contacts
+   * @name PutContact
+   * @request PUT:/contact
    * @secure
    */
-  export namespace PostContacts {
+  export namespace PutContact {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ContactRequest;
     export type RequestHeaders = {};
-    export type ResponseBody = PostContactsData;
+    export type ResponseBody = PutContactData;
   }
 
   /**
    * No description
    * @tags Contact
-   * @name GetContactsId
-   * @request GET:/contacts/{id}
+   * @name DeleteContact
+   * @request DELETE:/contact
    * @secure
    */
-  export namespace GetContactsId {
-    export type RequestParams = {
-      id: number;
-    };
+  export namespace DeleteContact {
+    export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = never;
     export type RequestHeaders = {};
-    export type ResponseBody = GetContactsIdData;
+    export type ResponseBody = DeleteContactData;
   }
 
   /**
    * No description
    * @tags Contact
-   * @name PutContactsId
-   * @request PUT:/contacts/{id}
+   * @name PostContactLocalizations
+   * @request POST:/contact/localizations
    * @secure
    */
-  export namespace PutContactsId {
-    export type RequestParams = {
-      id: number;
-    };
-    export type RequestQuery = {};
-    export type RequestBody = ContactRequest;
-    export type RequestHeaders = {};
-    export type ResponseBody = PutContactsIdData;
-  }
-
-  /**
-   * No description
-   * @tags Contact
-   * @name DeleteContactsId
-   * @request DELETE:/contacts/{id}
-   * @secure
-   */
-  export namespace DeleteContactsId {
-    export type RequestParams = {
-      id: number;
-    };
-    export type RequestQuery = {};
-    export type RequestBody = never;
-    export type RequestHeaders = {};
-    export type ResponseBody = DeleteContactsIdData;
-  }
-
-  /**
-   * No description
-   * @tags Contact
-   * @name PostContactsIdLocalizations
-   * @request POST:/contacts/{id}/localizations
-   * @secure
-   */
-  export namespace PostContactsIdLocalizations {
-    export type RequestParams = {
-      id: number;
-    };
+  export namespace PostContactLocalizations {
+    export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = ContactLocalizationRequest;
     export type RequestHeaders = {};
-    export type ResponseBody = PostContactsIdLocalizationsData;
+    export type ResponseBody = PostContactLocalizationsData;
   }
 }
 
@@ -4244,11 +4119,11 @@ export namespace DeliveryPayment {
   /**
    * No description
    * @tags Delivery-payment
-   * @name GetDeliveryPayments
-   * @request GET:/delivery-payments
+   * @name GetDeliveryPayment
+   * @request GET:/delivery-payment
    * @secure
    */
-  export namespace GetDeliveryPayments {
+  export namespace GetDeliveryPayment {
     export type RequestParams = {};
     export type RequestQuery = {
       /** Sort by attributes ascending (asc) or descending (desc) */
@@ -4274,90 +4149,52 @@ export namespace DeliveryPayment {
     };
     export type RequestBody = never;
     export type RequestHeaders = {};
-    export type ResponseBody = GetDeliveryPaymentsData;
+    export type ResponseBody = GetDeliveryPaymentData;
   }
 
   /**
    * No description
    * @tags Delivery-payment
-   * @name PostDeliveryPayments
-   * @request POST:/delivery-payments
+   * @name PutDeliveryPayment
+   * @request PUT:/delivery-payment
    * @secure
    */
-  export namespace PostDeliveryPayments {
+  export namespace PutDeliveryPayment {
     export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = DeliveryPaymentRequest;
     export type RequestHeaders = {};
-    export type ResponseBody = PostDeliveryPaymentsData;
+    export type ResponseBody = PutDeliveryPaymentData;
   }
 
   /**
    * No description
    * @tags Delivery-payment
-   * @name GetDeliveryPaymentsId
-   * @request GET:/delivery-payments/{id}
+   * @name DeleteDeliveryPayment
+   * @request DELETE:/delivery-payment
    * @secure
    */
-  export namespace GetDeliveryPaymentsId {
-    export type RequestParams = {
-      id: number;
-    };
+  export namespace DeleteDeliveryPayment {
+    export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = never;
     export type RequestHeaders = {};
-    export type ResponseBody = GetDeliveryPaymentsIdData;
+    export type ResponseBody = DeleteDeliveryPaymentData;
   }
 
   /**
    * No description
    * @tags Delivery-payment
-   * @name PutDeliveryPaymentsId
-   * @request PUT:/delivery-payments/{id}
+   * @name PostDeliveryPaymentLocalizations
+   * @request POST:/delivery-payment/localizations
    * @secure
    */
-  export namespace PutDeliveryPaymentsId {
-    export type RequestParams = {
-      id: number;
-    };
-    export type RequestQuery = {};
-    export type RequestBody = DeliveryPaymentRequest;
-    export type RequestHeaders = {};
-    export type ResponseBody = PutDeliveryPaymentsIdData;
-  }
-
-  /**
-   * No description
-   * @tags Delivery-payment
-   * @name DeleteDeliveryPaymentsId
-   * @request DELETE:/delivery-payments/{id}
-   * @secure
-   */
-  export namespace DeleteDeliveryPaymentsId {
-    export type RequestParams = {
-      id: number;
-    };
-    export type RequestQuery = {};
-    export type RequestBody = never;
-    export type RequestHeaders = {};
-    export type ResponseBody = DeleteDeliveryPaymentsIdData;
-  }
-
-  /**
-   * No description
-   * @tags Delivery-payment
-   * @name PostDeliveryPaymentsIdLocalizations
-   * @request POST:/delivery-payments/{id}/localizations
-   * @secure
-   */
-  export namespace PostDeliveryPaymentsIdLocalizations {
-    export type RequestParams = {
-      id: number;
-    };
+  export namespace PostDeliveryPaymentLocalizations {
+    export type RequestParams = {};
     export type RequestQuery = {};
     export type RequestBody = DeliveryPaymentLocalizationRequest;
     export type RequestHeaders = {};
-    export type ResponseBody = PostDeliveryPaymentsIdLocalizationsData;
+    export type ResponseBody = PostDeliveryPaymentLocalizationsData;
   }
 }
 

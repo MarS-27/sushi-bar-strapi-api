@@ -1033,14 +1033,12 @@ export interface ApiContactContact extends Schema.SingleType {
   };
 }
 
-export interface ApiDeliveryPaymentDeliveryPayment
-  extends Schema.CollectionType {
+export interface ApiDeliveryPaymentDeliveryPayment extends Schema.SingleType {
   collectionName: 'delivery_payments';
   info: {
     singularName: 'delivery-payment';
     pluralName: 'delivery-payments';
     displayName: 'delivery-payment';
-    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1051,21 +1049,14 @@ export interface ApiDeliveryPaymentDeliveryPayment
     };
   };
   attributes: {
-    type: Attribute.Enumeration<['Delivery', 'Payment']> &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: false;
-        };
-      }>;
-    title: Attribute.String &
+    delivery: Attribute.Component<'lists.info', true> &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
         };
       }>;
-    description: Attribute.Text &
+    payment: Attribute.Component<'lists.info', true> &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {

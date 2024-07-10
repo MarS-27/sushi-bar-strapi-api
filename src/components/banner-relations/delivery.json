@@ -4,11 +4,5 @@
     "displayName": "delivery"
   },
   "options": {},
-  "attributes": {
-    "delivery_payment": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::delivery-payment.delivery-payment"
-    }
-  }
+  "attributes": {}
 }
