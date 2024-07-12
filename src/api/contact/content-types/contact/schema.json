@@ -46,15 +46,13 @@
       "component": "lists.text-values",
       "required": true
     },
-    "phone_numbers": {
-      "type": "component",
-      "repeatable": true,
+    "phone_number": {
       "pluginOptions": {
         "i18n": {
           "localized": false
         }
       },
-      "component": "lists.text-values",
+      "type": "string",
       "required": true
     }
   }

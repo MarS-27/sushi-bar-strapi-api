@@ -1002,7 +1002,7 @@ export interface ApiContactContact extends Schema.SingleType {
           localized: true;
         };
       }>;
-    phone_numbers: Attribute.Component<'lists.text-values', true> &
+    phone_number: Attribute.String &
       Attribute.Required &
       Attribute.SetPluginOptions<{
         i18n: {

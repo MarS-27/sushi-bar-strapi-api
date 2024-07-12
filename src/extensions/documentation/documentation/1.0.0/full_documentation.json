@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-07-10T14:20:22.649Z"
+    "x-generation-date": "2024-07-12T10:15:49.638Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -3724,7 +3724,7 @@
         "required": [
           "work_mode",
           "addresses",
-          "phone_numbers",
+          "phone_number",
           "locale"
         ],
         "type": "object",
@@ -3744,11 +3744,8 @@
               "$ref": "#/components/schemas/ListsTextValuesComponent"
             }
           },
-          "phone_numbers": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ListsTextValuesComponent"
-            }
+          "phone_number": {
+            "type": "string"
           },
           "locale": {
             "type": "string"
@@ -3765,7 +3762,7 @@
             "required": [
               "work_mode",
               "addresses",
-              "phone_numbers"
+              "phone_number"
             ],
             "type": "object",
             "properties": {
@@ -3784,11 +3781,8 @@
                   "$ref": "#/components/schemas/ListsTextValuesComponent"
                 }
               },
-              "phone_numbers": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/ListsTextValuesComponent"
-                }
+              "phone_number": {
+                "type": "string"
               },
               "locale": {
                 "type": "string"
@@ -3916,7 +3910,7 @@
         "required": [
           "work_mode",
           "addresses",
-          "phone_numbers"
+          "phone_number"
         ],
         "properties": {
           "work_mode": {
@@ -3934,11 +3928,8 @@
               "$ref": "#/components/schemas/ListsTextValuesComponent"
             }
           },
-          "phone_numbers": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ListsTextValuesComponent"
-            }
+          "phone_number": {
+            "type": "string"
           },
           "createdAt": {
             "type": "string",
