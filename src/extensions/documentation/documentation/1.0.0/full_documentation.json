@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2024-07-12T10:15:49.638Z"
+    "x-generation-date": "2024-07-12T12:46:25.322Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -1749,9 +1749,6 @@
                               "attributes": {
                                 "type": "object",
                                 "properties": {
-                                  "titile": {
-                                    "type": "string"
-                                  },
                                   "icon": {
                                     "type": "object",
                                     "properties": {
@@ -1910,6 +1907,9 @@
                                         }
                                       }
                                     }
+                                  },
+                                  "title": {
+                                    "type": "string"
                                   },
                                   "createdAt": {
                                     "type": "string",
@@ -2309,15 +2309,12 @@
       },
       "CategoryLocalizationRequest": {
         "required": [
-          "titile",
           "icon",
+          "title",
           "locale"
         ],
         "type": "object",
         "properties": {
-          "titile": {
-            "type": "string"
-          },
           "icon": {
             "oneOf": [
               {
@@ -2343,6 +2340,9 @@
               "example": "string or id"
             }
           },
+          "title": {
+            "type": "string"
+          },
           "locale": {
             "type": "string"
           }
@@ -2356,14 +2356,11 @@
         "properties": {
           "data": {
             "required": [
-              "titile",
-              "icon"
+              "icon",
+              "title"
             ],
             "type": "object",
             "properties": {
-              "titile": {
-                "type": "string"
-              },
               "icon": {
                 "oneOf": [
                   {
@@ -2388,6 +2385,9 @@
                   ],
                   "example": "string or id"
                 }
+              },
+              "title": {
+                "type": "string"
               },
               "locale": {
                 "type": "string"
@@ -2513,13 +2513,10 @@
       "Category": {
         "type": "object",
         "required": [
-          "titile",
-          "icon"
+          "icon",
+          "title"
         ],
         "properties": {
-          "titile": {
-            "type": "string"
-          },
           "icon": {
             "type": "object",
             "properties": {
@@ -3325,9 +3322,6 @@
                                 "attributes": {
                                   "type": "object",
                                   "properties": {
-                                    "titile": {
-                                      "type": "string"
-                                    },
                                     "icon": {
                                       "type": "object",
                                       "properties": {
@@ -3487,6 +3481,9 @@
                                         }
                                       }
                                     },
+                                    "title": {
+                                      "type": "string"
+                                    },
                                     "createdAt": {
                                       "type": "string",
                                       "format": "date-time"
@@ -3635,6 +3632,9 @@
                 }
               }
             }
+          },
+          "title": {
+            "type": "string"
           },
           "createdAt": {
             "type": "string",
@@ -6092,9 +6092,6 @@
                               "attributes": {
                                 "type": "object",
                                 "properties": {
-                                  "titile": {
-                                    "type": "string"
-                                  },
                                   "icon": {
                                     "type": "object",
                                     "properties": {
@@ -6253,6 +6250,9 @@
                                         }
                                       }
                                     }
+                                  },
+                                  "title": {
+                                    "type": "string"
                                   },
                                   "createdAt": {
                                     "type": "string",
@@ -7349,9 +7349,6 @@
                   "attributes": {
                     "type": "object",
                     "properties": {
-                      "titile": {
-                        "type": "string"
-                      },
                       "icon": {
                         "type": "object",
                         "properties": {
@@ -7763,6 +7760,9 @@
                             }
                           }
                         }
+                      },
+                      "title": {
+                        "type": "string"
                       },
                       "createdAt": {
                         "type": "string",

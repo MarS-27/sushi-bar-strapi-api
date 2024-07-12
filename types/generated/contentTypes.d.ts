@@ -922,13 +922,6 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
     };
   };
   attributes: {
-    titile: Attribute.String &
-      Attribute.Required &
-      Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
     icon: Attribute.Media<'images'> &
       Attribute.Required &
       Attribute.SetPluginOptions<{
@@ -941,6 +934,13 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
       'oneToMany',
       'api::product.product'
     >;
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

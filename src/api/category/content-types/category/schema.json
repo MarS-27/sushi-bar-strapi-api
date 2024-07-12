@@ -16,15 +16,6 @@
     }
   },
   "attributes": {
-    "titile": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "string",
-      "required": true
-    },
     "icon": {
       "type": "media",
       "multiple": false,
@@ -43,6 +34,15 @@
       "relation": "oneToMany",
       "target": "api::product.product",
       "mappedBy": "category"
+    },
+    "title": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true
     }
   }
 }
